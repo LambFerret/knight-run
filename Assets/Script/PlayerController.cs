@@ -24,6 +24,7 @@ namespace Script
         public Animator animator;
         public GameObject soldierEffect;
         public SpriteRenderer starSprite;
+        public SFXPlayer sfxPlayer;
 
         private List<IPlayerObserver> _observers = new List<IPlayerObserver>();
         private List<GameObject> players = new List<GameObject>();
@@ -59,6 +60,7 @@ namespace Script
         {
             if (!_isJumping)
             {
+                sfxPlayer.Play("jump");
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _isJumping = true;
                 animator.SetBool("isJump", true);
@@ -110,12 +112,14 @@ namespace Script
 
         public void IncreaseScore(int amount)
         {
+            sfxPlayer.Play("kill");
             score += amount;
             NotifyScoreChanged(amount);
         }
 
         public void IncreaseLife(int amount)
         {
+            sfxPlayer.Play("cage");
             life += amount;
             NotifyLifeChanged(amount);
             AddLifeIntoGrid();
@@ -137,6 +141,7 @@ namespace Script
 
         private IEnumerator Dead()
         {
+            sfxPlayer.Play("playerDeath");
             Time.timeScale = 0.1F;
             yield return new WaitForSeconds(0.25f);
             Time.timeScale = 1;
