@@ -33,8 +33,8 @@ ehthumbs.db
 Thumbs.db
 
 Assets/Sprite1/*
+
 Assets/Sound/*
 
-Assets/Texture2D/*
 Assets/Sound/BoardGame/godori.wav.meta
 Assets/Sound/Alarm.meta
