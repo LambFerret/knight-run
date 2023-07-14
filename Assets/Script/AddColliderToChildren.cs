@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Script
 {
-    public class ObstacleBehavior : MonoBehaviour
+    public class AddColliderToChildren : MonoBehaviour
     {
         private void Start()
         {
