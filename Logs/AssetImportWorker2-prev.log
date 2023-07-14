@@ -15,7 +15,7 @@ D:/Unity/Projects/knight-run
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-55665
+62054
 Successfully changed project path to: D:/Unity/Projects/knight-run
 D:/Unity/Projects/knight-run
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ D:/Unity/Projects/knight-run
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [28436] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 3622672240 [EditorId] 3622672240 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [45664] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 523331842 [EditorId] 523331842 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [28436] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 3622672240 [EditorId] 3622672240 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [45664] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 523331842 [EditorId] 523331842 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 91.43 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 111.95 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.17f1 (3e8111cac19d)
 [Subsystems] Discovering subsystems at path D:/Unity/Editor/2021.3.17f1/Editor/Data/Resources/UnitySubsystems
@@ -67,487 +67,93 @@ Initialize mono
 Mono path[0] = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56548
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001855 seconds.
+Registered in 0.001879 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 338 ms
-Refreshing native plugins compatible for Editor in 77.61 ms, found 4 plugins.
+Android Extension - Scanning For ADB Devices 274 ms
+Refreshing native plugins compatible for Editor in 81.31 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.105 seconds
+- Completed reload, in  0.871 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1106ms)
-		BeginReloadAssembly (74ms)
+	ReloadAssembly (872ms)
+		BeginReloadAssembly (72ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (850ms)
-			LoadAssemblies (74ms)
+		EndReloadAssembly (713ms)
+			LoadAssemblies (72ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (214ms)
+			SetupTypeCache (127ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (22ms)
-			SetupLoadedEditorAssemblies (577ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (521ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (389ms)
+				InitializePlatformSupportModulesInManaged (332ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (78ms)
+				RefreshPlugins (81ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (67ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadAttributes (68ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006876 seconds.
+Registered in 0.005860 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 116.41 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 84.44 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.065 seconds
+- Completed reload, in  1.088 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1065ms)
-		BeginReloadAssembly (99ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (883ms)
-			LoadAssemblies (94ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (209ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (471ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (117ms)
-				BeforeProcessingInitializeOnLoad (84ms)
-				ProcessInitializeOnLoadAttributes (221ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
-				AfterProcessingInitializeOnLoad (1ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4096 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 40 unused Assets / (56.5 KB). Loaded Objects now: 4560.
-Memory consumption went from 153.8 MB to 153.8 MB.
-Total: 2.764000 ms (FindLiveObjects: 0.274400 ms CreateObjectMapping: 0.102800 ms MarkObjects: 2.305300 ms  DeleteObjects: 0.080700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 168927.736242 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_01.mat
-  artifactKey: Guid(cdaab65b4d72477418ba289d26915e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_01.mat using Guid(cdaab65b4d72477418ba289d26915e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '383fcf8102861a3343dfca94b487997f') in 0.115065 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.530637 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_02.mat
-  artifactKey: Guid(09ba3d7450ceb684cbabcfe433bc892a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_02.mat using Guid(09ba3d7450ceb684cbabcfe433bc892a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40ae52e6627eb827297ac1bd24e21895') in 0.010967 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.956173 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_03.mat
-  artifactKey: Guid(cb1432a4fc227074a9104da4045ab60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_03.mat using Guid(cb1432a4fc227074a9104da4045ab60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eca44bc41e477904f2db8453f55bd0e1') in 0.011848 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.678958 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_04.mat
-  artifactKey: Guid(18685d914f4e52149979a2b1da00304a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_04.mat using Guid(18685d914f4e52149979a2b1da00304a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '236645518f9790339028cb35b318d06c') in 0.015320 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.300582 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_05.mat
-  artifactKey: Guid(2c8e12c5936465b4e80ac9e09a758d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_05.mat using Guid(2c8e12c5936465b4e80ac9e09a758d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f0690e34af39c81ff3b205a8d96654b') in 0.011781 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.391722 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_06.mat
-  artifactKey: Guid(471905ca9f69463408f3c0a4c84f45d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Materials/bl_06.mat using Guid(471905ca9f69463408f3c0a4c84f45d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2b0fe2afb9882ddcf5960750a32e01d') in 0.016312 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.190275 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Destruction_air.prefab
-  artifactKey: Guid(3e675a04fd627f94e941cf41c1255b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Destruction_air.prefab using Guid(3e675a04fd627f94e941cf41c1255b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d72176640b1771991bb52faeb169d90') in 0.039016 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Lazer.prefab
-  artifactKey: Guid(2e9062b0bf56cd5439405fa3f191143f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Lazer.prefab using Guid(2e9062b0bf56cd5439405fa3f191143f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d664e626f29f40951d8b6e80721f3f') in 0.015780 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Rockets.prefab
-  artifactKey: Guid(897e96c9446189c4682db2477ed93015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Rockets.prefab using Guid(897e96c9446189c4682db2477ed93015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '598de1f65aa1bdfdaec704e000c8f244') in 0.019142 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Lazer_big.prefab
-  artifactKey: Guid(a706cbdcc813fb64ca000dba3ac95e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Prefab/Lazer_big.prefab using Guid(a706cbdcc813fb64ca000dba3ac95e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '599235c7a10b79456acc9a2f311372cf') in 0.035310 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.589348 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Destruction_air_big.mat
-  artifactKey: Guid(2169342763ccd254f839308e841ac9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Destruction_air_big.mat using Guid(2169342763ccd254f839308e841ac9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fefefcf5b870a947a4787855c8d40fa') in 0.029036 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.789681 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Flame.mat
-  artifactKey: Guid(2c7641c8003b613488a7887fe708a134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Flame.mat using Guid(2c7641c8003b613488a7887fe708a134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6bafffc0df8a605887a0e8974c0e254') in 0.013874 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.822790 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_dron.mat
-  artifactKey: Guid(809a58e7274af6d4b95acf013d9beea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_dron.mat using Guid(809a58e7274af6d4b95acf013d9beea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb86667cad495a04d6f260907bbad1d') in 0.011178 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.480623 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Mine.mat
-  artifactKey: Guid(bcb994be6d4e39c429c3e95029cb5ae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Mine.mat using Guid(bcb994be6d4e39c429c3e95029cb5ae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '136cf0bffd1cb36d5793e1372d6786ea') in 0.015461 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.771187 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Lazer_big.mat
-  artifactKey: Guid(ad358b4a661a9e74387f95f1cb15f08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Lazer_big.mat using Guid(ad358b4a661a9e74387f95f1cb15f08f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939fd4a89c0b565daeb5d963eb2e03ab') in 0.018334 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.018023 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Shotgun_hit.mat
-  artifactKey: Guid(774e94b8515f61f4db37b0cfa9f1a47c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Shotgun_hit.mat using Guid(774e94b8515f61f4db37b0cfa9f1a47c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81d2d09d9a40901e2de603f0a7434bed') in 0.014167 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.862090 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Smoke_1.mat
-  artifactKey: Guid(e45c57bad32c8f24a909b575c3a3d7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Smoke_1.mat using Guid(e45c57bad32c8f24a909b575c3a3d7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0904b461b1046fb574a002154fa31cc') in 0.010755 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.878402 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Smoke_2.mat
-  artifactKey: Guid(03b0307694e524d42beba0f5329b5464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Smoke_2.mat using Guid(03b0307694e524d42beba0f5329b5464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3af68cd6c3a887ef112bbc1b48472229') in 0.011820 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.833939 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Trail.mat
-  artifactKey: Guid(7547b12c90d9c0849981db0aa125453a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Trail.mat using Guid(7547b12c90d9c0849981db0aa125453a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5b6c1f19e43bddbf13e06cc770f836') in 0.016749 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.625422 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_tank.mat
-  artifactKey: Guid(da5c6f3cfd4569040a6d389ccf3c9b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_tank.mat using Guid(da5c6f3cfd4569040a6d389ccf3c9b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc3ac92c30dcacdfa98cd16b150a71e0') in 0.011666 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.623597 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Rikochet.mat
-  artifactKey: Guid(459768bb3887c63488b5709077c635d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Rikochet.mat using Guid(459768bb3887c63488b5709077c635d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167e2aaebcceaa600da227028501c632') in 0.013451 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.749913 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_shotgun.mat
-  artifactKey: Guid(c213e973e17fb8647b549f5868da9586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Muzzle_shotgun.mat using Guid(c213e973e17fb8647b549f5868da9586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '447986afa99b5b8c5491b4dd8e93ab8d') in 0.015584 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.748095 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Lazer.mat
-  artifactKey: Guid(c9c84fb89da0b724581aee006c63f39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Lazer.mat using Guid(c9c84fb89da0b724581aee006c63f39e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8cb249cc33e16fbbb6f4f952d6d6b08') in 0.012844 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.646532 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Ground_explosion.mat
-  artifactKey: Guid(4f11c8bd31cf8304ca04beeaa3d6179a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Ground_explosion.mat using Guid(4f11c8bd31cf8304ca04beeaa3d6179a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842385511e5fdee4754773b47b2df5d2') in 0.015584 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.508749 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Flame_2.mat
-  artifactKey: Guid(81f2cb80fb4a14141865e3524f99441f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Flame_2.mat using Guid(81f2cb80fb4a14141865e3524f99441f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f916af996967fed43152179aa3d0adb0') in 0.012347 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.881098 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Blood_01.mat
-  artifactKey: Guid(d7071212e696d7b4eb9134e48b6991a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Blood_01.mat using Guid(d7071212e696d7b4eb9134e48b6991a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a351a4d7dea6d9cddc3a232bfd89add8') in 0.012912 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Granade.mat
-  artifactKey: Guid(baeb6fa6686f61349bc63876f335a39b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Granade.mat using Guid(baeb6fa6686f61349bc63876f335a39b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebb80c1605f5d38dfeb507a285565dc5') in 0.016549 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Plazma.mat
-  artifactKey: Guid(2a0466bcc56ee8547a12ec5feaea5c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Plazma.mat using Guid(2a0466bcc56ee8547a12ec5feaea5c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cddfb447911bb7c1bfd74522ab76bfb') in 0.016596 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Lazer.mat
-  artifactKey: Guid(a1f115cb281953d498db701e29b6301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Lazer.mat using Guid(a1f115cb281953d498db701e29b6301c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56a1661338c05540c6ccd4249c001680') in 0.019577 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Fire.mat
-  artifactKey: Guid(38e6ea2a13c61914690a61e8f3e63204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Fire.mat using Guid(38e6ea2a13c61914690a61e8f3e63204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f579fc09f266a40f9fb7e44cbfff92e7') in 0.016956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Blood_floor_03.mat
-  artifactKey: Guid(ad6150ead0e7aaf42af0d616ed62fff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Materials/Blood_floor_03.mat using Guid(ad6150ead0e7aaf42af0d616ed62fff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5c91e21044d163d4b23965ca59f0142') in 0.017245 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.241898 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Blood_01.prefab
-  artifactKey: Guid(adc5f05263a2b344790cb02f3d128f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Blood_01.prefab using Guid(adc5f05263a2b344790cb02f3d128f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da45a8dce71b3e7f2475fc8aeaa6fcda') in 0.015394 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Plazma.prefab
-  artifactKey: Guid(3f561e6f1cc50fa4686b9c039a6537a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Plazma.prefab using Guid(3f561e6f1cc50fa4686b9c039a6537a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f08bc353c38414a5d668526da23ff5cb') in 0.015259 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Blood_floor_03.prefab
-  artifactKey: Guid(524355895df426a488ceff46eee4c408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Blood_floor_03.prefab using Guid(524355895df426a488ceff46eee4c408) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeaa08a962774375b234bbb2313c40d8') in 0.014812 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Burn_effect.prefab
-  artifactKey: Guid(0ce37eda34764fc44a71894fe9366560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Burn_effect.prefab using Guid(0ce37eda34764fc44a71894fe9366560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a0727986ffec97e66f035c393f27d7') in 0.016606 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Uzi.prefab
-  artifactKey: Guid(15b42cb6b962b37448fd43784f59c931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/18 Pixel Sprite effects/Prefabs/Uzi.prefab using Guid(15b42cb6b962b37448fd43784f59c931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1bdba8140b1e1ae0df8e9b4fbc7abf9') in 0.013217 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.736780 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Electricity.prefab
-  artifactKey: Guid(59856689d88ceae468b8f4774ac12bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Electricity.prefab using Guid(59856689d88ceae468b8f4774ac12bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b6c4213d4cc7b174b14b46e1895e36e') in 0.020565 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Health_up.prefab
-  artifactKey: Guid(974930936976fc34294feba411b454b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Health_up.prefab using Guid(974930936976fc34294feba411b454b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb965f59266f2555e467b46b6b3459ab') in 0.018523 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Explosion_4.prefab
-  artifactKey: Guid(d6cd933a03f756e4b97ba6600cc26fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Explosion_4.prefab using Guid(d6cd933a03f756e4b97ba6600cc26fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a338d60dc1b45ac61e189ea99afbc3') in 0.015663 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Smoke_5.prefab
-  artifactKey: Guid(d13e811c376306146ac829de7af32967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Prefabs/Smoke_5.prefab using Guid(d13e811c376306146ac829de7af32967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dceb0a6bdc42709e9790673a3c9f000') in 0.022086 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.927974 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Fire_small.mat
-  artifactKey: Guid(4361d498af916964283974797d6429cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Fire_small.mat using Guid(4361d498af916964283974797d6429cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d4761d473438a9137996dc087c4f97b') in 0.011823 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 30.070880 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_3.mat
-  artifactKey: Guid(823ed7b619119f746ad362952a7e918a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_3.mat using Guid(823ed7b619119f746ad362952a7e918a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c48816d7452d99b5e10757d20d928fe') in 0.016758 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.525533 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_4.mat
-  artifactKey: Guid(ec3a44a5af0fc2647b58457333aa6d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_4.mat using Guid(ec3a44a5af0fc2647b58457333aa6d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ac5ca0200fa9412d928402575b3bc3') in 0.039419 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.645196 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_5.mat
-  artifactKey: Guid(674be1597b7892b4fab1c7657407efd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_5.mat using Guid(674be1597b7892b4fab1c7657407efd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf413a44175f6bc6bb97770748ead44') in 0.017322 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.264215 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Ready_attack.mat
-  artifactKey: Guid(80228d2bc19021148a9ce807e88e5bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Ready_attack.mat using Guid(80228d2bc19021148a9ce807e88e5bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37ef736e0da644e3685126a47c8672ef') in 0.018993 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.729348 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Ground_explosion.mat
-  artifactKey: Guid(947745bb12877a943ac9ddeeda434e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Ground_explosion.mat using Guid(947745bb12877a943ac9ddeeda434e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '331efda683f98bd5894af2fcb7468a97') in 0.011466 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.572030 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Health_up.mat
-  artifactKey: Guid(c1bf2faa8d7517b4d85c66104653edda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Health_up.mat using Guid(c1bf2faa8d7517b4d85c66104653edda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fda6cb42012905dc68a224dca70439bf') in 0.015039 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.704900 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Fire_side.mat
-  artifactKey: Guid(ad0a6d759f9537a4d89c9388a99076a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Fire_side.mat using Guid(ad0a6d759f9537a4d89c9388a99076a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b474f543e14857044a41e719307486') in 0.014871 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.069676 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_2.mat
-  artifactKey: Guid(95df8aac6ae8b9345992fbefc591a0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_2.mat using Guid(95df8aac6ae8b9345992fbefc591a0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45da3a96c25ead2b32154203b5dc53dd') in 0.018202 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.742263 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_3.mat
-  artifactKey: Guid(277603893460c8e4ea742878642e55d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_3.mat using Guid(277603893460c8e4ea742878642e55d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5da8c21819448619c44a1ba0d3108109') in 0.013770 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.565123 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_4.mat
-  artifactKey: Guid(8dc9096de11f0ff40a60019d18e868c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_4.mat using Guid(8dc9096de11f0ff40a60019d18e868c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56667dc891937137d111686e5d694fbb') in 0.015690 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.605920 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_1.mat
-  artifactKey: Guid(7d61f7a356918354484cf44c2b218cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Explosion_1.mat using Guid(7d61f7a356918354484cf44c2b218cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0377a6407e7ebce20ba62bc226471f5a') in 0.011071 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.545603 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Electricity.mat
-  artifactKey: Guid(244076317d1773e4d8aff751192cdf7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Electricity.mat using Guid(244076317d1773e4d8aff751192cdf7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce1f41599fdf54350a3a43ec87cdc0d0') in 0.016210 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.043647 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_side.mat
-  artifactKey: Guid(e7e472616ba30984591b30712c55b89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_side.mat using Guid(e7e472616ba30984591b30712c55b89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10f4ac790e595b14185e27cfb975dd7a') in 0.015515 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.454277 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_2.mat
-  artifactKey: Guid(b5629f26b022e1949ad469f001a8a0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_2.mat using Guid(b5629f26b022e1949ad469f001a8a0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30574d2cd893fa5a2acd3e0e8af41107') in 0.021445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.624635 seconds.
-  path: Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_1.mat
-  artifactKey: Guid(35551c135a0ab9042938e59642b9a7e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/19 Pixel Sprite effects/Materials/Smoke_1.mat using Guid(35551c135a0ab9042938e59642b9a7e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d118537d2bbc7df3466d0c7fc7ca408') in 0.015458 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005690 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.079 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1080ms)
-		BeginReloadAssembly (124ms)
+	ReloadAssembly (1089ms)
+		BeginReloadAssembly (119ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (871ms)
-			LoadAssemblies (101ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (864ms)
+			LoadAssemblies (112ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (264ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (389ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (416ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (81ms)
-				ProcessInitializeOnLoadAttributes (231ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (208ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.73 ms, found 4 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.79 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4072 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 27 unused Assets / (24.8 KB). Loaded Objects now: 4605.
-Memory consumption went from 156.1 MB to 156.1 MB.
-Total: 3.365900 ms (FindLiveObjects: 0.250600 ms CreateObjectMapping: 0.105300 ms MarkObjects: 2.971900 ms  DeleteObjects: 0.037100 ms)
+Unloading 4097 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (56.3 KB). Loaded Objects now: 4562.
+Memory consumption went from 153.9 MB to 153.8 MB.
+Total: 2.805500 ms (FindLiveObjects: 0.274400 ms CreateObjectMapping: 0.102000 ms MarkObjects: 2.358400 ms  DeleteObjects: 0.069800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -562,41 +168,133 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 87.213166 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_01.png
-  artifactKey: Guid(f0076d6bbe83043499ed61828a9c48d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_01.png using Guid(f0076d6bbe83043499ed61828a9c48d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6028bb6d636f7661ea754eead9e91993') in 0.062154 seconds 
+  Time since last request: 173760.304036 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs
+  artifactKey: Guid(123f8363b8aa75b4f95b72c1b29c5b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs using Guid(123f8363b8aa75b4f95b72c1b29c5b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c85de01244b9427abc860a8666e41bc') in 0.007959 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_06.png
-  artifactKey: Guid(57f5640ae163f3c458648d585733628a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_06.png using Guid(57f5640ae163f3c458648d585733628a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f473df11eb98c029dae0dd441ecda2') in 0.015582 seconds 
+  Time since last request: 0.034718 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_01_01.prefab
+  artifactKey: Guid(9d04543a842394d4f84b06bab5dada73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_01_01.prefab using Guid(9d04543a842394d4f84b06bab5dada73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4920dcbf640d7460183ca8826756a396') in 0.124570 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_09.png
-  artifactKey: Guid(ca3ef7239894e9c45ab2bb00eba2b93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_09.png using Guid(ca3ef7239894e9c45ab2bb00eba2b93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '745083da213a6eea7f93d4c889054637') in 0.016098 seconds 
+  Time since last request: 0.416149 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_01.mat
+  artifactKey: Guid(ab7a9609f3a18404e92155db61849a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_01.mat using Guid(ab7a9609f3a18404e92155db61849a8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37ba15ab1d205cf92fb9e3853d27b5b7') in 0.026243 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_05.png
-  artifactKey: Guid(4a6e1f969eeb50a4081b3c0b7eeab760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_05.png using Guid(4a6e1f969eeb50a4081b3c0b7eeab760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b0d0d5aebe6286720678e065e0ea19c') in 0.016499 seconds 
+  Time since last request: 0.686012 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_02.mat
+  artifactKey: Guid(4b5fb37af8d345d45bb40aee179c6d16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_02.mat using Guid(4b5fb37af8d345d45bb40aee179c6d16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5112a8b5d26ccdbcaa64a35623d3bb34') in 0.010452 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_08.png
-  artifactKey: Guid(4bc8fde8fa00bb54f8bde666c0202410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/10 pixel blood splash sprite effects/Textures/bl_08.png using Guid(4bc8fde8fa00bb54f8bde666c0202410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18744c7f9f9e436c167a7075d75ebda4') in 0.014574 seconds 
+  Time since last request: 0.744574 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_03.mat
+  artifactKey: Guid(4e18cafb9431bbc4b8078e5e1182bee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_03.mat using Guid(4e18cafb9431bbc4b8078e5e1182bee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29319d5a07461994bc847f68835fac25') in 0.010562 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.644811 seconds.
-  path: Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Destruction_air.mat
-  artifactKey: Guid(2b5cbfce0954f8f478ec0f379ebc481b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Sprite Effects pack/15 Pixel Sprite effects/Material/Destruction_air.mat using Guid(2b5cbfce0954f8f478ec0f379ebc481b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb74ec7c1daebd3f2381b69fdbaa618e') in 0.030947 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 0.610912 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_04.mat
+  artifactKey: Guid(ae668cad306ed274880c7e5759b2107b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_04.mat using Guid(ae668cad306ed274880c7e5759b2107b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beea12423b63644b5319f879abe98c38') in 0.010881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.473512 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_05.mat
+  artifactKey: Guid(cb2ca0cd0ca392445a9b1eac98004df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Materials/expl_01_05.mat using Guid(cb2ca0cd0ca392445a9b1eac98004df0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2e01087796d90d4766b9239d4f6403e') in 0.010433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.324796 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs
+  artifactKey: Guid(3be22f4415c1e144ab40930998b60de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs using Guid(3be22f4415c1e144ab40930998b60de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96e85714b2fb1b0956a18b1b3d1d4970') in 0.001730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.062302 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_1.prefab
+  artifactKey: Guid(1b45098fd21148d4dbffbefff9f947dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_1.prefab using Guid(1b45098fd21148d4dbffbefff9f947dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f29815b5e565b71eeab0a1772a17296c') in 0.017402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.504081 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_1.mat
+  artifactKey: Guid(99067c9ceca5cca47acaedd79ddabde6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_1.mat using Guid(99067c9ceca5cca47acaedd79ddabde6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bd1609e87586ad8d9cd16e86d78a41') in 0.010066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.533755 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_2.mat
+  artifactKey: Guid(7a94511aba3ff0b45a31cc45eddc03a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_2.mat using Guid(7a94511aba3ff0b45a31cc45eddc03a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed00dfb7d497d5b3037df0750208d1c4') in 0.010640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.511514 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_3.mat
+  artifactKey: Guid(8d377fb4ce44bdf4ea1fc162a3ada6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_3.mat using Guid(8d377fb4ce44bdf4ea1fc162a3ada6f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf177fa318070d7fe39e4072d8c5cd45') in 0.010808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.416178 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_4.mat
+  artifactKey: Guid(4bad2598ecfed074bb71a2eabd3872fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_4.mat using Guid(4bad2598ecfed074bb71a2eabd3872fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a557d5fc3563d8c8da98a5915beb01') in 0.010428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.519686 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_5.mat
+  artifactKey: Guid(92fb83de01e25bf479e890f2f7a271a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Materials/Flame_5.mat using Guid(92fb83de01e25bf479e890f2f7a271a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f899832df8e3fbf5eb11528db1ada9b') in 0.010175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.603215 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs
+  artifactKey: Guid(940016a1948088b4c939b65191fceddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs using Guid(940016a1948088b4c939b65191fceddb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab543c8996ed1053688698bea0217fae') in 0.001735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.293971 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green
+  artifactKey: Guid(f3782322e0e1e91459cc721a42da24f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green using Guid(f3782322e0e1e91459cc721a42da24f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f92dddca56fcf7fa9c59d149a264757') in 0.007252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.060907 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_1_green.prefab
+  artifactKey: Guid(6d6a91795ebe84f44808082b6ddc2b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_1_green.prefab using Guid(6d6a91795ebe84f44808082b6ddc2b16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d577dfe5ffde25d634861741134dc08') in 0.015746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Uzi_2_green.prefab
+  artifactKey: Guid(f755fca84b332c346a66154140e6ce82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Uzi_2_green.prefab using Guid(f755fca84b332c346a66154140e6ce82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a060928324c8456d4cd1e1807b47317d') in 0.021206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_10_green.prefab
+  artifactKey: Guid(10029e3dfc3f5ff40be31e8d46306af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_10_green.prefab using Guid(10029e3dfc3f5ff40be31e8d46306af5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c85befe0b7e8d4cf3704bdbef5dde7e4') in 0.014746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.950616 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_2_green.mat
+  artifactKey: Guid(392be3e3cddf8484aa2221bcb0ee7770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_2_green.mat using Guid(392be3e3cddf8484aa2221bcb0ee7770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a938c58ec6f43b1a87fa57331866be4a') in 0.011744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.753376 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_9_green.mat
+  artifactKey: Guid(df1f1b5a785a8514ca41abc82c2388fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_9_green.mat using Guid(df1f1b5a785a8514ca41abc82c2388fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2042e51c45ce4656a38d0ca5ceb329a') in 0.010337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.780363 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_10_green.mat
+  artifactKey: Guid(89b2cb434ea93bc4181ac381bdc36536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Materials/Green/Ef_10_green.mat using Guid(89b2cb434ea93bc4181ac381bdc36536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b7899d4108bafb2d2096fb05b953b70') in 0.010389 seconds 

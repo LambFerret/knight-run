@@ -39,9 +39,8 @@ public class Effect : MonoBehaviour
                     });
                 break;
             case Case.Fight:
-                gameObject.SetActive(true);
-                yield return new WaitForSeconds(0.2f);
-                gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                Destroy(gameObject);
                 break;
         }
         yield return null;
