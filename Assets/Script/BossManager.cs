@@ -7,6 +7,9 @@ using TMPro;
 
 public class BossManager : MonoBehaviour
 {
+    public SFXPlayer sfxPlayer;
+    public SFXPlayer musicPlayer;
+
     public Image blackSquare;
 
     public TMP_Text curAllyCountUI;
@@ -116,6 +119,8 @@ public class BossManager : MonoBehaviour
         
         if (isFeverTime && Input.GetMouseButtonDown(0) && curTouchTime > 0.1f && curBossCount > 0) //피버타임
         {
+            int a = Random.Range(0, 3);
+            sfxPlayer.Play("card_swing_" + a, 1.0f);
             Camera.main.transform.DOShakePosition(0.4f, 0.4f, 2, 180);
             curBossCount--;
             Debug.Log("bossDummyLocation: " + bossDummyLocation);
@@ -143,12 +148,13 @@ public class BossManager : MonoBehaviour
         if(!isFeverTime && curBossCount <= 0 && !isWinCheck)
         {
             Debug.Log("Winner!");
+            musicPlayer.Play("Warmhall_Loop_2", 1.0f);
             isWin = true;
             isWinCheck = true;
             Vector2 crownFirstPosition = new Vector2(currentPlayer.transform.position.x, currentPlayer.transform.position.y + 10);
             Vector2 crownSecondPosition = new Vector2(currentPlayer.transform.position.x + 0.25f, currentPlayer.transform.position.y + 1);
             crown.transform.position = crownFirstPosition;
-            crown.transform.DOMove(crownSecondPosition, 5).OnComplete(() => gameoverPanel.SetActive(true));
+            crown.transform.DOMove(crownSecondPosition, 5).OnComplete(() => { gameoverPanel.SetActive(true); sfxPlayer.Play("Magic_Skill_66", 1.0f); });
         }
 
     }
@@ -282,6 +288,8 @@ public class BossManager : MonoBehaviour
                 curBossCount--;
                 Vector3 destination = bossLocation.transform.position; //원래 위치
                 destination.x += 10; //뒤로 날아가는 위치. 값은 조정 가능
+                int a = Random.Range(0, 3);
+                sfxPlayer.Play("card_swing_" + a, 1.0f);
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOJump(destination, 10f, 1, 3f); //포물선으로 날아가기. 첫 번째 파라미터는 목적지, 두 번째는 점프 높이, 세 번째는 점프 횟수, 네 번째는 전체 동작 시간
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
@@ -304,6 +312,8 @@ public class BossManager : MonoBehaviour
                 curPlayerCount--;
                 Vector3 destination = playerLocation.transform.position; //원래 위치
                 destination.x += -10; //반대편으로 날아가는 위치. 값은 조정 가능
+                int a = Random.Range(0, 3);
+                sfxPlayer.Play("card_swing_" + a, 1.0f);
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
                 currentPlayer.transform.DOJump(destination, 10f, 1, 3f); //포물선으로 날아가기. 첫 번째 파라미터는 목적지, 두 번째는 점프 높이, 세 번째는 점프 횟수, 네 번째는 전체 동작 시간
                 currentBoss.transform.DOKill(); // 이 부분을 추가
@@ -395,6 +405,7 @@ public class BossManager : MonoBehaviour
 
     IEnumerator FeverTime(float duration)
     {
+        sfxPlayer.Play("UI_WC_StartGame", 1.0f);
         isFeverTime = true;
         feverUI.gameObject.SetActive(true);
         int a = (int)duration * 5;
