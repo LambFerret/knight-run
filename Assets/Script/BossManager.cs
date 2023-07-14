@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class BossManager : MonoBehaviour
 
     public bool isBattleongoing; //배틀이 시작되었는가?
     public bool isstop; //배틀이 시작되었는가?
+    public bool isClicked; //클릭했는가?
     bool isFeverTime = false;
 
     private Vector3 originalSize; // rhythmCircle1의 원래 크기를 저장
@@ -86,7 +88,7 @@ public class BossManager : MonoBehaviour
         
         if (isFeverTime && Input.GetMouseButtonDown(0) && curTouchTime > 0.1f) //피버타임
         {
-            
+            Camera.main.transform.DOShakePosition(0.4f, 0.4f, 2, 180);
             curBossCount--;
             Debug.Log("bossDummyLocation: " + bossDummyLocation);
             Vector3 destination = bossLocation.transform.position; //원래 위치
@@ -148,7 +150,7 @@ public class BossManager : MonoBehaviour
 
     void StartRhythmGame()
     {
-        Camera.main.DOFieldOfView(60, 2);
+        Camera.main.DOFieldOfView(40, 1);
         rhythmCircle1.SetActive(true);
         rhythmCircle2.SetActive(true);
         originalSize = rhythmCircle1.transform.localScale;
@@ -198,9 +200,10 @@ public class BossManager : MonoBehaviour
 
     void CheckClick()
     {
+        float distance = (rhythmCircle2.transform.localScale - originalSize).magnitude;
         if (Input.GetMouseButtonDown(0))
         {
-            float distance = (rhythmCircle2.transform.localScale - originalSize).magnitude;
+            isClicked = true;
             if (distance < 0.2f)
             {
                 Debug.Log("Fever!" + distance);
@@ -213,6 +216,8 @@ public class BossManager : MonoBehaviour
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOJump(destination, 10f, 1, 3f);
                 StartCoroutine(FeverTime(randomRange));  // 2초 동안 피버타임 시작
+                Camera.main.DOFieldOfView(60, 0.5f);
+                Camera.main.transform.DOShakePosition(1, 1, 5, 180);
             }
             else if (distance < 0.5f)
             {
@@ -226,7 +231,8 @@ public class BossManager : MonoBehaviour
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
                 currentPlayer.transform.DOMove(bossLocation.transform.position, 4); //5초 동안 보스를 향해 이동
                 StartCoroutine(DeactivateBoss());
-
+                Camera.main.DOFieldOfView(60, 0.5f);
+                Camera.main.transform.DOShakePosition(1, 1, 5, 180);
 
                 if (curBossCount > 0)
                 {
@@ -246,6 +252,8 @@ public class BossManager : MonoBehaviour
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOMove(playerLocation.transform.position, 4); //5초 동안 플레이어를 향해 이동
                 StartCoroutine(DeactivatePlayer());
+                Camera.main.DOFieldOfView(60, 0.5f);
+                Camera.main.transform.DOShakePosition(1, 1, 5, 180);
 
                 if (curPlayerCount > 0)
                 {
@@ -259,6 +267,40 @@ public class BossManager : MonoBehaviour
             rhythmCircle2.SetActive(false);
 
             Invoke("NextFight", 2f);
+        }
+
+        if (distance <= 0)
+        {
+            if (!isClicked)
+            {
+                rhythmCircle1.SetActive(false);
+                rhythmCircle2.SetActive(false);
+                Debug.Log("Bad!" + distance);
+                state = State.Bad;
+                curPlayerCount--;
+                Vector3 destination = playerLocation.transform.position; //원래 위치
+                destination.x += -10; //반대편으로 날아가는 위치. 값은 조정 가능
+                currentPlayer.transform.DOKill(); // 이 부분을 추가
+                currentPlayer.transform.DOJump(destination, 10f, 1, 3f); //포물선으로 날아가기. 첫 번째 파라미터는 목적지, 두 번째는 점프 높이, 세 번째는 점프 횟수, 네 번째는 전체 동작 시간
+                currentBoss.transform.DOKill(); // 이 부분을 추가
+                currentBoss.transform.DOMove(playerLocation.transform.position, 4); //5초 동안 플레이어를 향해 이동
+                StartCoroutine(DeactivatePlayer());
+                Camera.main.DOFieldOfView(60, 0.5f);
+                Camera.main.transform.DOShakePosition(1, 1, 5, 180);
+
+                if (curPlayerCount > 0)
+                {
+                    currentPlayerIndex++;
+                    currentPlayer = playerAll[currentPlayerIndex];
+                }
+
+                rhythmCircle2.transform.DOKill(); // 원의 크기 변화 트윈을 중지합니다.
+            }
+            else
+            {
+                isClicked = false;
+            }
+
         }
     }
 
@@ -303,7 +345,7 @@ public class BossManager : MonoBehaviour
         // 점수 부여 또는 패널티 부여
         if (curPlayerCount > 0 && curBossCount > 0)
         {
-
+            Camera.main.DOFieldOfView(60, 0.5f);
             isBattleongoing = true;
         }
         else

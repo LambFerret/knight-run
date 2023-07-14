@@ -664,7 +664,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: c70e4abe52dd98347845275de169af62, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: f317df3938f3841c0b75c2c5e8366063, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -687,7 +687,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304740282
 GameObject:
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: c70e4abe52dd98347845275de169af62, type: 2}
+  m_Texture: {fileID: 8400000, guid: f317df3938f3841c0b75c2c5e8366063, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1642,7 +1642,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1673,7 +1673,7 @@ Transform:
   m_Children:
   - {fileID: 2002691706}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073365503
 GameObject:
@@ -1717,8 +1717,8 @@ MonoBehaviour:
   curBossLocation2: {fileID: 1948178317}
   cam2Open: {fileID: 979975884}
   cam2Close: {fileID: 2067999741}
-  player: {fileID: 5088244742634291018, guid: 855bd5d30aaf98a4dab63881f01714cc, type: 3}
-  boss: {fileID: 857402208655292470, guid: 03ea1b665e3c5f24499b8ecef88c79f7, type: 3}
+  player: {fileID: 5587386584640697820, guid: 9b413148880991443a7b75d0b75edf10, type: 3}
+  boss: {fileID: 5587386584640697820, guid: 1a703d5a201f20740935735d25425dd8, type: 3}
   playerAll: []
   bossAll: []
   rhythmCircle1: {fileID: 2002691705}
@@ -1727,6 +1727,7 @@ MonoBehaviour:
   currentBoss: {fileID: 0}
   isBattleongoing: 0
   isstop: 0
+  isClicked: 0
   currentPlayerIndex: 0
   currentBossIndex: 0
   state: 0
@@ -1745,7 +1746,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125064517
 GameObject:
