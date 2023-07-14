@@ -14,6 +14,7 @@ public class BossManager : MonoBehaviour
 
     public TMP_Text curAllyCountUI;
     public TMP_Text curBossCountUI;
+    public TMP_Text curComboCountUI;
 
     public Transform mainCam; //메인캠
     public Transform cam2; //캠
@@ -26,6 +27,8 @@ public class BossManager : MonoBehaviour
 
     public int curPlayerCount; //현재 플레이어 카운트
     public int curBossCount; //현재 보스 카운트
+    public int curPlayerCount2; //현재 플레이어 카운트
+    public int curBossCount2; //현재 보스 카운트
 
     public Transform playerLocation;
     public Transform bossLocation;
@@ -68,6 +71,8 @@ public class BossManager : MonoBehaviour
     public bool isWin;
     public bool isWinCheck;
 
+    int comboCount;
+
     public enum State
     {
         None, Fever, Bad, Good
@@ -92,6 +97,9 @@ public class BossManager : MonoBehaviour
         bossAll = new GameObject[curBossCount];
         CreatePlayerNBoss();
         isBattleongoing = false;
+        curPlayerCount2 = curPlayerCount;
+        curBossCount2 = curBossCount;
+        comboCount = 0;
     }
 
     IEnumerator FadeOutAndDisable()
@@ -119,6 +127,7 @@ public class BossManager : MonoBehaviour
         
         if (isFeverTime && Input.GetMouseButtonDown(0) && curTouchTime > 0.1f && curBossCount > 0) //피버타임
         {
+            comboCount++;
             int a = Random.Range(0, 3);
             sfxPlayer.Play("card_swing_" + a, 1.0f);
             Camera.main.transform.DOShakePosition(0.4f, 0.4f, 2, 180);
@@ -149,6 +158,7 @@ public class BossManager : MonoBehaviour
         {
             Debug.Log("Winner!");
             musicPlayer.Play("Warmhall_Loop_2", 1.0f);
+            currentPlayer.transform.DOKill();
             isWin = true;
             isWinCheck = true;
             Vector2 crownFirstPosition = new Vector2(currentPlayer.transform.position.x, currentPlayer.transform.position.y + 10);
@@ -161,8 +171,47 @@ public class BossManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        curAllyCountUI.text = "X" + curPlayerCount;
-        curBossCountUI.text = "X" + curBossCount;
+        if(curPlayerCount2 != curPlayerCount)
+        {
+            curAllyCountUI.transform.DOKill();
+
+            // Scale을 증가시키고, 0.1초 후에 원래대로 돌려놓음
+            curAllyCountUI.transform.DOScale(1.5f, 0.1f).OnComplete(() =>
+            {
+                curAllyCountUI.transform.DOScale(1f, 0.1f);
+            });
+
+            curAllyCountUI.text = "X" + curPlayerCount;
+        }
+        else if(curBossCount2 != curBossCount)
+        {
+            curBossCountUI.transform.DOKill();
+
+            // Scale을 증가시키고, 0.1초 후에 원래대로 돌려놓음
+            curBossCountUI.transform.DOScale(1.5f, 0.1f).OnComplete(() =>
+            {
+                curBossCountUI.transform.DOScale(1f, 0.1f);
+            });
+
+            curBossCountUI.text = "X" + curBossCount;
+        }
+        else
+        {
+            curAllyCountUI.text = "X" + curPlayerCount;
+            curBossCountUI.text = "X" + curBossCount;
+        }
+        curPlayerCount2 = curPlayerCount;
+        curBossCount2 = curBossCount;
+
+        if(comboCount > 0)
+        {
+            curComboCountUI.gameObject.SetActive(true);
+            curComboCountUI.text = comboCount.ToString() + " COMBO";
+        }
+        else
+        {
+            curComboCountUI.gameObject.SetActive(false);
+        }
     }
 
     void CameraFollow()
@@ -348,6 +397,8 @@ public class BossManager : MonoBehaviour
                 Debug.Log("Bad!" + distance);
                 state = State.Bad;
                 curPlayerCount--;
+                int a = Random.Range(0, 3);
+                sfxPlayer.Play("card_swing_" + a, 1.0f);
                 Vector3 destination = playerLocation.transform.position; //원래 위치
                 destination.x += -10; //반대편으로 날아가는 위치. 값은 조정 가능
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
@@ -384,7 +435,7 @@ public class BossManager : MonoBehaviour
         GameObject a = currentBoss.gameObject;
         yield return new WaitForSeconds(1);
         a.SetActive(false);
-        if(state == State.Good)
+        if(state == State.Good && !isWin)
         {
             currentPlayer.transform.DOKill();
             currentPlayer.transform.DOMove(bossLocation.position, 0.01f);
@@ -429,12 +480,19 @@ public class BossManager : MonoBehaviour
         {
             feverUI.transform.DOScale(1.2f, 0.2f); // feverUI를 0.2초 동안 1.5배로 키우기
             feverUI.DOColor(neonBlue, 0.2f);
+            curComboCountUI.transform.DOScale(1.2f, 0.2f); // feverUI를 0.2초 동안 1.5배로 키우기
+            curComboCountUI.DOColor(neonBlue, 0.2f);
+            
             yield return new WaitForSeconds(0.2f);
             feverUI.DOColor(neonGreen, 0.2f);
             feverUI.transform.DOScale(1f, 0.2f); // feverUI를 다시 0.2초 동안 원래 크기로 줄이기
+            curComboCountUI.transform.DOScale(1f, 0.2f); // feverUI를 0.2초 동안 1.5배로 키우기
+            curComboCountUI.DOColor(neonGreen, 0.2f);
             yield return new WaitForSeconds(0.2f);
         }
         feverUI.gameObject.SetActive(false);
+        //curComboCountUI.gameObject.SetActive(false);
+        comboCount = 0;
     }
 
     void NextFight()
