@@ -31,8 +31,7 @@ namespace Script
             while (_groundInstances.Count < stageNumber)
             {
                 int randomInt = UnityEngine.Random.Range(0, groundPrefabs.Count - 1);
-                GameObject ground = Instantiate(groundPrefabs[randomInt], transform);
-                ground.transform.position = new Vector3(_totalGroundWidth, 0, 0);
+                GameObject ground = Instantiate(groundPrefabs[randomInt], new Vector3(_totalGroundWidth, 0, -9.5f), Quaternion.identity, transform);
                 _totalGroundWidth += ground.transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
                 _groundInstances.Add(ground);
             }
