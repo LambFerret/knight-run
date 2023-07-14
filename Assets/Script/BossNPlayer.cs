@@ -25,6 +25,11 @@ public class BossNPlayer : MonoBehaviour
         {
             SetAnimationSpeed(1);
         }
+
+        if (bossManager.isWin)
+        {
+            PlayAnimation("Idle");
+        }
     }
 
     public void PlayAnimation(string animationState)

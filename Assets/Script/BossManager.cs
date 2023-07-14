@@ -46,6 +46,8 @@ public class BossManager : MonoBehaviour
     public GameObject currentPlayer;
     public GameObject currentBoss;
 
+    public GameObject gameoverPanel;
+
     public bool isBattleongoing = true; //배틀이 시작되었는가?
     public bool isstop; //배틀이 시작되었는가?
     public bool isstopCheck; //배틀이 시작되었는가?
@@ -143,9 +145,10 @@ public class BossManager : MonoBehaviour
             Debug.Log("Winner!");
             isWin = true;
             isWinCheck = true;
-            Vector2 crownFirstPosition = new Vector2(currentPlayer.transform.position.x, currentPlayer.transform.position.y + 20);
+            Vector2 crownFirstPosition = new Vector2(currentPlayer.transform.position.x, currentPlayer.transform.position.y + 10);
+            Vector2 crownSecondPosition = new Vector2(currentPlayer.transform.position.x + 0.25f, currentPlayer.transform.position.y + 1);
             crown.transform.position = crownFirstPosition;
-            crown.transform.DOMove(currentPlayer.transform.position, 7);
+            crown.transform.DOMove(crownSecondPosition, 5).OnComplete(() => gameoverPanel.SetActive(true));
         }
 
     }
