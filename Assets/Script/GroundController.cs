@@ -8,49 +8,75 @@ namespace Script
     public class GroundController : MonoBehaviour
     {
         public List<GameObject> groundPrefabs;
-        public List<GameObject> foregrounds;
         public PlayerController player;
         public float foregroundSpeedMultiplier = 3F;
         public ProgressBarBehavior progressBar;
         public int stageNumber;
+        public List<GameObject> foreFront;
+        public List<GameObject> foreBack;
+        public GameObject background;
 
         private float _groundWidth;
         private float _totalGroundWidth;
         private float _currentDistance = 0;
+        private float _foreFrontWidth;
+        private float _foreBackWidth;
         private List<GameObject> _groundInstances;
 
         private void Start()
         {
+            _foreFrontWidth = foreFront[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
+            _foreBackWidth = foreBack[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _groundInstances = new List<GameObject>();
             while (_groundInstances.Count < stageNumber)
             {
                 int randomInt = UnityEngine.Random.Range(0, groundPrefabs.Count - 1);
                 GameObject ground = Instantiate(groundPrefabs[randomInt], transform);
                 ground.transform.position = new Vector3(_totalGroundWidth, 0, 0);
-                // 여기서 array 안의 토탈 길이를 계산
                 _totalGroundWidth += ground.transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
                 _groundInstances.Add(ground);
             }
 
-            // 첫번째 array에 있는 element 의 길이를 저장
             _groundWidth = _groundInstances[0].transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
 
-            foreach (GameObject foreground in foregrounds)
-            {
-                Sequence sequence = DOTween.Sequence();
-                sequence.Append(foreground.transform.DOMoveX(-_groundWidth, player.speed).SetEase(Ease.Linear));
-                sequence.Append(foreground.transform.DOMoveX(foreground.transform.position.x, 0));
-                sequence.SetLoops(-1);
-            }
             progressBar.SetMaxValue(_totalGroundWidth);
-
         }
 
         private void Update()
         {
+            Renderer rend = background.GetComponent<Renderer>();
+            rend.material.mainTextureOffset += new Vector2(0.1f * Time.deltaTime, 0);
             foreach (GameObject ground in _groundInstances)
             {
                 ground.transform.position -= new Vector3(player.speed * Time.deltaTime, 0, 0);
+            }
+
+            foreach (var back in foreBack)
+            {
+                back.transform.position -= new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier, 0, 0);
+                if (back.transform.position.x <= -_foreBackWidth)
+                {
+                    back.transform.position = new Vector3
+                    (
+                         _foreBackWidth - back.transform.position.x,
+                        back.transform.position.y,
+                        back.transform.position.z
+                    );
+                }
+            }
+
+            foreach (var front in foreFront)
+            {
+                front.transform.position -= new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier*1.1f, 0, 0);
+                if (front.transform.position.x <= -_foreFrontWidth)
+                {
+                    front.transform.position = new Vector3
+                    (
+                        _foreFrontWidth - front.transform.position.x,
+                        front.transform.position.y,
+                        front.transform.position.z
+                    );
+                }
             }
 
             _currentDistance += player.speed * Time.deltaTime;

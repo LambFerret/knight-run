@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Script
@@ -15,6 +16,10 @@ namespace Script
         public void SetValue(float value)
         {
             _progressBar.value = value;
+            if (_progressBar.value >= _progressBar.maxValue)
+            {
+                SceneManager.LoadScene("Boss");
+            }
         }
 
         public void SetMaxValue(float value)

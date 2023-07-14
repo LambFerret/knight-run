@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +22,8 @@ namespace Script
         public GameObject emergencyPanel;
         public TextMeshProUGUI emergencyPanelText;
         public Animator animator;
+        public GameObject soldierEffect;
+        public SpriteRenderer starSprite;
 
         private List<IPlayerObserver> _observers = new List<IPlayerObserver>();
         private List<GameObject> players = new List<GameObject>();
@@ -45,6 +46,20 @@ namespace Script
             {
                 AddLifeIntoGrid();
             }
+
+            float gravity = Mathf.Abs(Physics2D.gravity.y);
+            float initialSpeed = jumpForce / _rb.mass;
+
+// The time to reach the maximum height
+            float timeToReachMaxHeight = initialSpeed / gravity;
+
+// The total time for a jump
+            float totalJumpTime = 2 * timeToReachMaxHeight;
+
+// Assuming the jump animation has 1 unit of time, calculate how fast we need to play the animation
+            float animationSpeed = 1 / totalJumpTime;
+
+            animator.SetFloat("jumpTime", animationSpeed);
         }
 
         public void Jump()
@@ -176,6 +191,7 @@ namespace Script
                     _isBoostMode = false;
                     GameOver();
                 }
+
                 if (life > 0)
                 {
                     speed = _initialSpeed;
@@ -186,7 +202,6 @@ namespace Script
             {
                 emergencyPanel.SetActive(false);
             }
-
 
 
             if (life > 0 && !_haveOneMoreCoin)
@@ -229,9 +244,17 @@ namespace Script
 
             if (collision.transform.parent.gameObject.CompareTag("Score"))
             {
+                Debug.Log("score up");
                 IncreaseScore(1);
                 if (_isBoostMode) boostTime += boostAddTime;
-                Destroy(collision.gameObject);
+                Vector3 destination = collision.transform.position;
+                int b = Random.Range(7, 20);
+                destination.x += 10;
+                Instantiate(soldierEffect, collision.transform.position, Quaternion.identity);
+                collision.transform.DOJump(destination, b, 1, 2f);
+                collision.transform.DOScale(new Vector3(0.001F, 0.001F, 0.001F), 2F)
+                    .OnComplete(() => Destroy(collision));
+                StartCoroutine(MakeStar(destination));
             }
 
             if (collision.transform.parent.gameObject.CompareTag("Life"))
@@ -239,6 +262,16 @@ namespace Script
                 IncreaseLife(1);
                 Destroy(collision.gameObject);
             }
+        }
+
+        public IEnumerator MakeStar(Vector3 pos)
+        {
+            yield return new WaitForSeconds(2f);
+            starSprite.transform.position = pos;
+            starSprite.transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1);
+            var sequence = DOTween.Sequence();
+            sequence.Append(starSprite.transform.DOScale(new Vector3(0.05F, 0.05F, 0.05F), 0.5F));
+            sequence.Append(starSprite.transform.DOScale(new Vector3(0.01F, 0.01F, 0.01F), 0.5F));
         }
     }
 }
