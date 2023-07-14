@@ -3516,6 +3516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5402d936d1c5454fad85234fed8cef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxPlayer: {fileID: 1316115572}
   groundPrefabs:
   - {fileID: 7087785147937185613, guid: 7e585103e14a34618bf9ac05d31a8833, type: 3}
   - {fileID: 7087785147937185613, guid: d35996bd02cef4a2284970455b795033, type: 3}
@@ -3848,7 +3849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d718a026dbaaa429c0602a74253751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: []
+  clip:
+  - {fileID: 8300000, guid: 4a52a1d6c935c4d5989c3229b2c2e5ff, type: 3}
 --- !u!1 &1418672397
 GameObject:
   m_ObjectHideFlags: 0
