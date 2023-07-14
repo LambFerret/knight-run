@@ -15,7 +15,7 @@ D:/Unity/Projects/knight-run
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-54310
+62054
 Successfully changed project path to: D:/Unity/Projects/knight-run
 D:/Unity/Projects/knight-run
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ D:/Unity/Projects/knight-run
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [27600] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 2752351236 [EditorId] 2752351236 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [24876] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 230227762 [EditorId] 230227762 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [27600] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 2752351236 [EditorId] 2752351236 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [24876] Host "[IP] 100.100.100.77 [Port] 0 [Flags] 2 [Guid] 230227762 [EditorId] 230227762 [Version] 1048832 [Id] WindowsEditor(7,S41AL) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 102.55 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 79.90 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.17f1 (3e8111cac19d)
 [Subsystems] Discovering subsystems at path D:/Unity/Editor/2021.3.17f1/Editor/Data/Resources/UnitySubsystems
@@ -67,93 +67,93 @@ Initialize mono
 Mono path[0] = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56100
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002830 seconds.
+Registered in 0.001791 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 358 ms
-Refreshing native plugins compatible for Editor in 87.75 ms, found 4 plugins.
+Android Extension - Scanning For ADB Devices 280 ms
+Refreshing native plugins compatible for Editor in 97.76 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.948 seconds
+- Completed reload, in  0.859 seconds
 Domain Reload Profiling:
-	ReloadAssembly (948ms)
-		BeginReloadAssembly (89ms)
+	ReloadAssembly (859ms)
+		BeginReloadAssembly (70ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (763ms)
-			LoadAssemblies (89ms)
+		EndReloadAssembly (704ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (87ms)
+			SetupTypeCache (88ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (613ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (554ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (411ms)
+				InitializePlatformSupportModulesInManaged (329ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (88ms)
+				RefreshPlugins (98ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (76ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
+				ProcessInitializeOnLoadAttributes (79ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005783 seconds.
+Registered in 0.007809 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity\Projects\knight-run\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 93.19 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 105.45 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.013 seconds
+- Completed reload, in  1.060 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1014ms)
-		BeginReloadAssembly (99ms)
+	ReloadAssembly (1061ms)
+		BeginReloadAssembly (113ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (823ms)
-			LoadAssemblies (94ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (841ms)
+			LoadAssemblies (98ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (203ms)
+			SetupTypeCache (206ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (62ms)
-			SetupLoadedEditorAssemblies (421ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (434ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (93ms)
-				BeforeProcessingInitializeOnLoad (81ms)
-				ProcessInitializeOnLoadAttributes (198ms)
+				RefreshPlugins (106ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (197ms)
 				ProcessInitializeOnLoadMethodAttributes (33ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.68 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4095 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 40 unused Assets / (56.5 KB). Loaded Objects now: 4559.
-Memory consumption went from 153.7 MB to 153.7 MB.
-Total: 3.024500 ms (FindLiveObjects: 0.385400 ms CreateObjectMapping: 0.136500 ms MarkObjects: 2.445200 ms  DeleteObjects: 0.056600 ms)
+Unloading 4097 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (56.3 KB). Loaded Objects now: 4562.
+Memory consumption went from 153.9 MB to 153.8 MB.
+Total: 2.656500 ms (FindLiveObjects: 0.285700 ms CreateObjectMapping: 0.181200 ms MarkObjects: 2.125600 ms  DeleteObjects: 0.063000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -168,47 +168,97 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 157691.150243 seconds.
-  path: Assets/Texture2D/4.png
-  artifactKey: Guid(71b1d799dcf2748feabd020f48474ad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture2D/4.png using Guid(71b1d799dcf2748feabd020f48474ad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034c66c457f0b618976b7f52eb0cb162') in 0.167635 seconds 
+  Time since last request: 173747.413683 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_02.prefab
+  artifactKey: Guid(5d7ede3bdb603834c84d045c76e0b84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_02.prefab using Guid(5d7ede3bdb603834c84d045c76e0b84c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea2ca04669583ebb3949239ccf67ac99') in 0.125277 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.940695 seconds.
-  path: Assets/Texture/285_20230714140326.png
-  artifactKey: Guid(d8bb9e5ecca364df28453690198d9842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/285_20230714140326.png using Guid(d8bb9e5ecca364df28453690198d9842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e44b53137601b7b44a4d956dbe436d9f') in 0.057728 seconds 
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_07.prefab
+  artifactKey: Guid(20dc9aab39a4a8b4c805650c47fb3dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_07.prefab using Guid(20dc9aab39a4a8b4c805650c47fb3dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a37df8066750b1c966cfc6d49cf539e2') in 0.015949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_04.prefab
+  artifactKey: Guid(3477fcd4e78755d4bb19a00c80a11b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_04.prefab using Guid(3477fcd4e78755d4bb19a00c80a11b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70443b85ea8212a12aeb8b35f76e476') in 0.014911 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000020 seconds.
-  path: Assets/Texture/294_20230714165110.png
-  artifactKey: Guid(b660c71eaadc1480baead34bffdcf0cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/294_20230714165110.png using Guid(b660c71eaadc1480baead34bffdcf0cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4209edf594365727c597290e69e54a7') in 0.193636 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.782683 seconds.
-  path: Assets/Texture/player/5.png
-  artifactKey: Guid(15a1173aceb50405fbbdb50021c71d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/player/5.png using Guid(15a1173aceb50405fbbdb50021c71d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd754a8107d032f83c8d51aef461144e6') in 0.153383 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Texture/player/16.png
-  artifactKey: Guid(d5eeb46cc3efd4b73a0f2c6206198aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/player/16.png using Guid(d5eeb46cc3efd4b73a0f2c6206198aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31af25208816ba006d9ba8108627b7c4') in 0.149169 seconds 
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Plazma.prefab
+  artifactKey: Guid(d1995513166f39745b9b39e38baee2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Plazma.prefab using Guid(d1995513166f39745b9b39e38baee2b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b80bb80a042f9265b7da98c7f91bcd8') in 0.023964 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000024 seconds.
-  path: Assets/Texture/player/17.png
-  artifactKey: Guid(f9c2c5ebddcca462690a5492d13584fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/player/17.png using Guid(f9c2c5ebddcca462690a5492d13584fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1df0646e1fdbd054079504d5f059f55') in 0.170393 seconds 
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_09.prefab
+  artifactKey: Guid(84c6af1cebef130418dbd03f2f84c6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_09.prefab using Guid(84c6af1cebef130418dbd03f2f84c6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f620e31937f25dcb6f89b0ec041be05') in 0.014359 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Texture/player/6.png
-  artifactKey: Guid(788bff278ebcb4e46823c03d658d5603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Texture/player/6.png using Guid(788bff278ebcb4e46823c03d658d5603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ecf3c31cf1482601950a18698a13136') in 0.142440 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 0.000031 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_11.prefab
+  artifactKey: Guid(5660b063f6b1891428cd79fda57bcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_11.prefab using Guid(5660b063f6b1891428cd79fda57bcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97748d5460932e36f618f9cbc45141d3') in 0.015433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_10.prefab
+  artifactKey: Guid(18796d4916521814f9076336cc290ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel electricity VFX pack/Prefabs/Electricity_ef_10.prefab using Guid(18796d4916521814f9076336cc290ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60df81dd4e209fa4f043691c45125593') in 0.014047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.669505 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_01_03.prefab
+  artifactKey: Guid(5586adf6795b7f04db07bff9dfa82522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_01_03.prefab using Guid(5586adf6795b7f04db07bff9dfa82522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc936797e590aebf16cea2185ed86f25') in 0.018005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_02.prefab
+  artifactKey: Guid(c9a82c19162233f42a48df67da6599e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_02.prefab using Guid(c9a82c19162233f42a48df67da6599e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9999bb4a8d0bf13cc17c64dceb9d44d') in 0.015933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_01.prefab
+  artifactKey: Guid(68c63049d4cc1624482b66926741c507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_01.prefab using Guid(68c63049d4cc1624482b66926741c507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f54cc074a06d466bce208298a273cf3') in 0.015639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_03.prefab
+  artifactKey: Guid(c907fbb6597812947990bfab2d4a6e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel explosions sprite effects pack/Prefabs/expl_02_03.prefab using Guid(c907fbb6597812947990bfab2d4a6e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5a63314ca6034a710f8c601d8f448a3') in 0.015826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.460517 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_3.prefab
+  artifactKey: Guid(cf71f149b2bd70f47831e5526c65852b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_3.prefab using Guid(cf71f149b2bd70f47831e5526c65852b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37120fbb5bed12d13d30934d4770bdac') in 0.015003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_5.prefab
+  artifactKey: Guid(56326adee74266648aa727207477f9c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Flame Sprite effects/Prefabs/Flame_5.prefab using Guid(56326adee74266648aa727207477f9c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f193928e13d71110706c010330acd16') in 0.014272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.518477 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_3_green.prefab
+  artifactKey: Guid(4ff83325c501e904e94677332788b42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_3_green.prefab using Guid(4ff83325c501e904e94677332788b42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edea0abef54ddd65a28f3655c8df2322') in 0.015362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_5_green.prefab
+  artifactKey: Guid(2f272d67b34853b439f9acd80fc55f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_5_green.prefab using Guid(2f272d67b34853b439f9acd80fc55f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f9eba3299748a7875be9947a41c890f') in 0.015546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_8_green.prefab
+  artifactKey: Guid(b80a9805a6f88b743a592fc761f0bff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Sprite Effects pack/Pixel Muzzle Flashes Sprite effects/Prefabs/Green/Ef_8_green.prefab using Guid(b80a9805a6f88b743a592fc761f0bff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afabf36950a82114ceb47baf9f161bd0') in 0.016233 seconds 

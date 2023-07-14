@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BossManager : MonoBehaviour
 {
+    public TMP_Text curAllyCountUI;
+    public TMP_Text curBossCountUI;
+
     public Transform mainCam; //메인캠
     public Transform cam2; //캠
     public GameObject cam2UI;
+
 
     private bool shouldCameraFollow = true; // 카메라가 플레이어를 따라갈지 여부
 
@@ -39,6 +44,8 @@ public class BossManager : MonoBehaviour
 
     public bool isBattleongoing; //배틀이 시작되었는가?
     public bool isstop; //배틀이 시작되었는가?
+    public bool isstopCheck; //배틀이 시작되었는가?
+    public bool isDual; //리듬듀얼중인가?
     public bool isClicked; //클릭했는가?
     bool isFeverTime = false;
 
@@ -72,21 +79,23 @@ public class BossManager : MonoBehaviour
         bossAll = new GameObject[curBossCount];
         CreatePlayerNBoss();
         //StartRhythmGame();
-        isBattleongoing = true;
+        isBattleongoing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isBattleongoing)
+        if (!isBattleongoing)
         {
             StartBattle();
-            isBattleongoing = false;
+            isBattleongoing = true;
             isstop = false;
+            isstopCheck = false;
         }
         CameraFollow();
+        if(isDual) CheckClick();
         
-        if (isFeverTime && Input.GetMouseButtonDown(0) && curTouchTime > 0.1f) //피버타임
+        if (isFeverTime && Input.GetMouseButtonDown(0) && curTouchTime > 0.1f && curBossCount > 0) //피버타임
         {
             Camera.main.transform.DOShakePosition(0.4f, 0.4f, 2, 180);
             curBossCount--;
@@ -114,7 +123,13 @@ public class BossManager : MonoBehaviour
 
 
     }
-    
+
+    private void LateUpdate()
+    {
+        curAllyCountUI.text = "X" + curPlayerCount;
+        curBossCountUI.text = "X" + curBossCount;
+    }
+
     void CameraFollow()
     {
         // Check if currentBoss is close to currentPlayer
@@ -124,9 +139,10 @@ public class BossManager : MonoBehaviour
         {
             // If the currentBoss is close, stop the camera
             shouldCameraFollow = false;
-            if (!isstop)
+            if (!isstop && !isstopCheck)
             {
                 isstop = true;
+                isstopCheck = true;
                 Invoke("PlayerBossClose", 0.1f);
             }
 
@@ -155,7 +171,8 @@ public class BossManager : MonoBehaviour
         rhythmCircle2.SetActive(true);
         originalSize = rhythmCircle1.transform.localScale;
         rhythmCircle2.transform.localScale = originalSize * 5; // 시작할 때 rhythmCircle2의 크기를 rhythmCircle1의 5배로 만듭니다.
-        rhythmCircle2.transform.DOScale(originalSize, 1).SetEase(Ease.InOutSine).OnUpdate(CheckClick);// 2초 동안 rhythmCircle2의 크기를 rhythmCircle1의 크기로 만듭니다.
+        rhythmCircle2.transform.DOScale(originalSize, 1).SetEase(Ease.InOutSine);// 2초 동안 rhythmCircle2의 크기를 rhythmCircle1의 크기로 만듭니다.
+        isDual = true;
     }
 
     void CreatePlayerNBoss()
@@ -163,12 +180,14 @@ public class BossManager : MonoBehaviour
         for (int i = 0; i < curPlayerCount; i++)
         {
             Vector3 newPos = new Vector3(playerLocation.position.x - i * 2, playerLocation.position.y, playerLocation.position.z);
+
             playerAll[i] = Instantiate(player, newPos, playerLocation.rotation);
         }
 
         for (int i = 0; i < curBossCount; i++)
         {
             Vector3 newPos = new Vector3(bossLocation.position.x + i * 2, bossLocation.position.y, bossLocation.position.z);
+
             bossAll[i] = Instantiate(boss, newPos, bossLocation.rotation);
         }
 
@@ -178,13 +197,15 @@ public class BossManager : MonoBehaviour
 
     void StartBattle()
     {
+        //Camera.main.transform.DOKill();
+        //Camera.main.DOFieldOfView(60, 0.01f);
         StartCoroutine(MoveTowardsEachOther());
     }
 
     IEnumerator MoveTowardsEachOther()
     {
         currentPlayer.transform.position = new Vector2(playerLocation.position.x, playerLocation.position.y);
-        currentBoss.transform.position = new Vector2(bossLocation.position.x, playerLocation.position.y);
+        currentBoss.transform.position = new Vector2(bossLocation.position.x, bossLocation.position.y);
         shouldCameraFollow = true;
         yield return new WaitForSeconds(1); //1초 후에 이동 시작
         cam2UI.transform.DOMove(cam2Open.position, 1);
@@ -204,22 +225,25 @@ public class BossManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isClicked = true;
-            if (distance < 0.2f)
+            isstop = false;
+            isDual = false;
+            if (distance < 0.3f && distance > 0)
             {
                 Debug.Log("Fever!" + distance);
                 state = State.Fever;
-                int randomRange = Random.Range(2, 4);
+                //int randomRange = Random.Range(2, 4);
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
                 Vector3 destination = bossLocation.transform.position; //원래 위치
                 //bossDummyLocation = new Vector2(currentBoss.transform.position.x, currentBoss.transform.position.y);
                 destination.x += 10; //뒤로 날아가는 위치. 값은 조정 가능
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOJump(destination, 10f, 1, 3f);
-                StartCoroutine(FeverTime(randomRange));  // 2초 동안 피버타임 시작
+                StartCoroutine(FeverTime(2));  // 2초 동안 피버타임 시작
+                Camera.main.DOKill();
                 Camera.main.DOFieldOfView(60, 0.5f);
                 Camera.main.transform.DOShakePosition(1, 1, 5, 180);
             }
-            else if (distance < 0.5f)
+            else if (distance < 1.3f && distance >= 0.3f)
             {
                 Debug.Log("Good!" + distance);
                 state = State.Good;
@@ -231,6 +255,7 @@ public class BossManager : MonoBehaviour
                 currentPlayer.transform.DOKill(); // 이 부분을 추가
                 currentPlayer.transform.DOMove(bossLocation.transform.position, 4); //5초 동안 보스를 향해 이동
                 StartCoroutine(DeactivateBoss());
+                Camera.main.DOKill();
                 Camera.main.DOFieldOfView(60, 0.5f);
                 Camera.main.transform.DOShakePosition(1, 1, 5, 180);
 
@@ -252,6 +277,7 @@ public class BossManager : MonoBehaviour
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOMove(playerLocation.transform.position, 4); //5초 동안 플레이어를 향해 이동
                 StartCoroutine(DeactivatePlayer());
+                Camera.main.DOKill();
                 Camera.main.DOFieldOfView(60, 0.5f);
                 Camera.main.transform.DOShakePosition(1, 1, 5, 180);
 
@@ -268,11 +294,13 @@ public class BossManager : MonoBehaviour
 
             Invoke("NextFight", 2f);
         }
-
         if (distance <= 0)
         {
             if (!isClicked)
             {
+                isClicked = false;
+                isstop = false;
+                isDual = false;
                 rhythmCircle1.SetActive(false);
                 rhythmCircle2.SetActive(false);
                 Debug.Log("Bad!" + distance);
@@ -285,6 +313,7 @@ public class BossManager : MonoBehaviour
                 currentBoss.transform.DOKill(); // 이 부분을 추가
                 currentBoss.transform.DOMove(playerLocation.transform.position, 4); //5초 동안 플레이어를 향해 이동
                 StartCoroutine(DeactivatePlayer());
+                Camera.main.DOKill();
                 Camera.main.DOFieldOfView(60, 0.5f);
                 Camera.main.transform.DOShakePosition(1, 1, 5, 180);
 
@@ -295,10 +324,14 @@ public class BossManager : MonoBehaviour
                 }
 
                 rhythmCircle2.transform.DOKill(); // 원의 크기 변화 트윈을 중지합니다.
+
+                Invoke("NextFight", 2f);
             }
             else
             {
+                isDual = false;
                 isClicked = false;
+                isstop = false;
             }
 
         }
@@ -345,8 +378,9 @@ public class BossManager : MonoBehaviour
         // 점수 부여 또는 패널티 부여
         if (curPlayerCount > 0 && curBossCount > 0)
         {
+            Camera.main.DOKill();
             Camera.main.DOFieldOfView(60, 0.5f);
-            isBattleongoing = true;
+            isBattleongoing = false;
         }
         else
         {
