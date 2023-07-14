@@ -117,7 +117,7 @@ namespace Script
             }
 
             RemoveLifeFromGrid();
-            StartCoroutine(Blink());
+            // StartCoroutine(Blink());
         }
 
         private void AddLifeIntoGrid()
