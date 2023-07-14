@@ -112,7 +112,7 @@ namespace Script
 
         public void IncreaseScore(int amount)
         {
-            sfxPlayer.Play("kill");
+            sfxPlayer.Play("kill", 0.3F);
             score += amount;
             NotifyScoreChanged(amount);
         }

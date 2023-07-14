@@ -7,6 +7,7 @@ namespace Script
 {
     public class GroundController : MonoBehaviour
     {
+        public SFXPlayer sfxPlayer;
         public List<GameObject> groundPrefabs;
         public PlayerController player;
         public float foregroundSpeedMultiplier = 3F;
@@ -25,13 +26,15 @@ namespace Script
 
         private void Start()
         {
+            sfxPlayer.Play("FireFly", 0.8F);
             _foreFrontWidth = foreFront[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _foreBackWidth = foreBack[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _groundInstances = new List<GameObject>();
             while (_groundInstances.Count < stageNumber)
             {
                 int randomInt = UnityEngine.Random.Range(0, groundPrefabs.Count - 1);
-                GameObject ground = Instantiate(groundPrefabs[randomInt], new Vector3(_totalGroundWidth, 0, -9.5f), Quaternion.identity, transform);
+                GameObject ground = Instantiate(groundPrefabs[randomInt], new Vector3(_totalGroundWidth, 0, -9.5f),
+                    Quaternion.identity, transform);
                 _totalGroundWidth += ground.transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
                 _groundInstances.Add(ground);
             }
@@ -57,7 +60,7 @@ namespace Script
                 {
                     back.transform.position = new Vector3
                     (
-                         _foreBackWidth - back.transform.position.x,
+                        _foreBackWidth - back.transform.position.x,
                         back.transform.position.y,
                         back.transform.position.z
                     );
@@ -66,7 +69,8 @@ namespace Script
 
             foreach (var front in foreFront)
             {
-                front.transform.position -= new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier*1.1f, 0, 0);
+                front.transform.position -=
+                    new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier * 1.1f, 0, 0);
                 if (front.transform.position.x <= -_foreFrontWidth)
                 {
                     front.transform.position = new Vector3
