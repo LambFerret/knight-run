@@ -49,16 +49,9 @@ namespace Script
 
             float gravity = Mathf.Abs(Physics2D.gravity.y);
             float initialSpeed = jumpForce / _rb.mass;
-
-// The time to reach the maximum height
             float timeToReachMaxHeight = initialSpeed / gravity;
-
-// The total time for a jump
             float totalJumpTime = 2 * timeToReachMaxHeight;
-
-// Assuming the jump animation has 1 unit of time, calculate how fast we need to play the animation
             float animationSpeed = 1 / totalJumpTime;
-
             animator.SetFloat("jumpTime", animationSpeed);
         }
 
@@ -76,7 +69,7 @@ namespace Script
         {
             _isInvincible = true;
             yield return new WaitForSeconds(invincibleTime);
-            _isInvincible = false;
+            if (!_isBoostMode) _isInvincible = false;
         }
 
 
@@ -184,6 +177,7 @@ namespace Script
             if (_isBoostMode)
             {
                 emergencyPanel.SetActive(true);
+                boostTime -= Time.deltaTime;
                 emergencyPanelText.text = boostTime.ToString("0.0");
                 speed = boostSpeedMultiplier;
                 if (boostTime <= 0)
@@ -244,7 +238,6 @@ namespace Script
 
             if (collision.transform.parent.gameObject.CompareTag("Score"))
             {
-                Debug.Log("score up");
                 IncreaseScore(1);
                 if (_isBoostMode) boostTime += boostAddTime;
                 Vector3 destination = collision.transform.position;
@@ -254,7 +247,7 @@ namespace Script
                 collision.transform.DOJump(destination, b, 1, 2f);
                 collision.transform.DOScale(new Vector3(0.001F, 0.001F, 0.001F), 2F)
                     .OnComplete(() => Destroy(collision));
-                StartCoroutine(MakeStar(destination));
+                StartCoroutine(MakeStar(destination/2));
             }
 
             if (collision.transform.parent.gameObject.CompareTag("Life"))
