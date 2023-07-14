@@ -13,13 +13,13 @@ namespace Script
         {
             PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
             player.AddObserver(this);
-            text.text = "Life : " + player.life;
+            text.text =  player.life.ToString();
         }
 
         public void OnLifeChange(int life, int value)
         {
             StartCoroutine(LifeChangedValueText(value));
-            text.text = "Life : " + life;
+            text.text = life.ToString();
         }
 
         private IEnumerator LifeChangedValueText(int value)

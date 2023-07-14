@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -7,64 +8,79 @@ namespace Script
     public class GroundController : MonoBehaviour
     {
         public List<GameObject> groundPrefabs;
-        public List<GameObject> foregrounds;
         public PlayerController player;
         public float foregroundSpeedMultiplier = 3F;
+        public ProgressBarBehavior progressBar;
+        public int stageNumber;
+        public List<GameObject> foreFront;
+        public List<GameObject> foreBack;
+        public GameObject background;
 
         private float _groundWidth;
         private float _totalGroundWidth;
+        private float _currentDistance = 0;
+        private float _foreFrontWidth;
+        private float _foreBackWidth;
         private List<GameObject> _groundInstances;
 
-        private void Awake()
+        private void Start()
         {
+            _foreFrontWidth = foreFront[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
+            _foreBackWidth = foreBack[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _groundInstances = new List<GameObject>();
-            foreach (GameObject groundInstance in groundPrefabs)
+            while (_groundInstances.Count < stageNumber)
             {
-                GameObject ground = Instantiate(groundInstance, transform);
+                int randomInt = UnityEngine.Random.Range(0, groundPrefabs.Count - 1);
+                GameObject ground = Instantiate(groundPrefabs[randomInt], transform);
                 ground.transform.position = new Vector3(_totalGroundWidth, 0, 0);
-                // 여기서 array 안의 토탈 길이를 계산
                 _totalGroundWidth += ground.transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
                 _groundInstances.Add(ground);
             }
 
-            // 첫번째 array에 있는 element 의 길이를 저장
             _groundWidth = _groundInstances[0].transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
 
-            foreach (GameObject foreground in foregrounds)
-            {
-                Sequence sequence = DOTween.Sequence();
-                sequence.Append(foreground.transform.DOMoveX(-_groundWidth, player.speed / foregroundSpeedMultiplier).SetEase(Ease.Linear));
-                sequence.Append(foreground.transform.DOMoveX(foreground.transform.position.x, 0));
-                sequence.SetLoops(-1);
-
-            }
+            progressBar.SetMaxValue(_totalGroundWidth);
         }
 
         private void Update()
         {
-            // 무시
+            Renderer rend = background.GetComponent<Renderer>();
+            rend.material.mainTextureOffset += new Vector2(0.1f * Time.deltaTime, 0);
             foreach (GameObject ground in _groundInstances)
             {
                 ground.transform.position -= new Vector3(player.speed * Time.deltaTime, 0, 0);
             }
 
-            // 만일 array에서 첫번째 element의 x 좌표가 -_groundWidth 보다 작거나 같다면
-            if (_groundInstances[0].transform.position.x <= -_groundWidth)
+            foreach (var back in foreBack)
             {
-                // 첫번째 element의 좌표를 토탈 길이를 참조하여 변경
-                _groundInstances[0].transform.position = new Vector3
-                (
-                    _totalGroundWidth - _groundInstances[0].transform.position.x,
-                    _groundInstances[0].transform.position.y,
-                    _groundInstances[0].transform.position.z
-                );
-                // 첫번째 element를 array의 마지막 element로 옮김
-                GameObject obj = _groundInstances[0];
-                _groundInstances.RemoveAt(0);
-                _groundInstances.Add(obj);
-                // 0번째 element 길이 재저장
-                _groundWidth = _groundInstances[0].transform.Find("Ground").GetComponent<SpriteRenderer>().bounds.size.x;
+                back.transform.position -= new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier, 0, 0);
+                if (back.transform.position.x <= -_foreBackWidth)
+                {
+                    back.transform.position = new Vector3
+                    (
+                         _foreBackWidth - back.transform.position.x,
+                        back.transform.position.y,
+                        back.transform.position.z
+                    );
+                }
             }
+
+            foreach (var front in foreFront)
+            {
+                front.transform.position -= new Vector3(player.speed * Time.deltaTime * foregroundSpeedMultiplier*1.1f, 0, 0);
+                if (front.transform.position.x <= -_foreFrontWidth)
+                {
+                    front.transform.position = new Vector3
+                    (
+                        _foreFrontWidth - front.transform.position.x,
+                        front.transform.position.y,
+                        front.transform.position.z
+                    );
+                }
+            }
+
+            _currentDistance += player.speed * Time.deltaTime;
+            progressBar.SetValue(_currentDistance);
         }
     }
 }

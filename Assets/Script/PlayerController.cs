@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,25 +14,52 @@ namespace Script
         public float invincibleTime = 2f;
         public int score;
         public int speed;
+        public int boostSpeedMultiplier;
+        public float boostTime;
+        public float boostAddTime;
         public GameObject playerPrefab;
+        public GameObject defeatPanel;
+        public GameObject emergencyPanel;
+        public TextMeshProUGUI emergencyPanelText;
+        public Animator animator;
+        public GameObject soldierEffect;
+        public SpriteRenderer starSprite;
 
         private List<IPlayerObserver> _observers = new List<IPlayerObserver>();
         private List<GameObject> players = new List<GameObject>();
+        private int _initialSpeed;
+        private int _boostSpeed;
         private bool _isJumping;
         private bool _isInvincible;
+        private bool _haveOneMoreCoin = true;
+        private bool _isBoostMode;
         private Rigidbody2D _rb;
-        private SpriteRenderer _sprite;
         private GridLayoutGroup _lifeGroup;
 
         private void Start()
         {
+            _initialSpeed = speed;
+            _boostSpeed = speed * boostSpeedMultiplier;
             _lifeGroup = transform.Find("LifeContainer").GetComponent<GridLayoutGroup>();
             _rb = GetComponent<Rigidbody2D>();
-            _sprite = GetComponent<SpriteRenderer>();
             for (int i = 0; i < life; i++)
             {
                 AddLifeIntoGrid();
             }
+
+            float gravity = Mathf.Abs(Physics2D.gravity.y);
+            float initialSpeed = jumpForce / _rb.mass;
+
+// The time to reach the maximum height
+            float timeToReachMaxHeight = initialSpeed / gravity;
+
+// The total time for a jump
+            float totalJumpTime = 2 * timeToReachMaxHeight;
+
+// Assuming the jump animation has 1 unit of time, calculate how fast we need to play the animation
+            float animationSpeed = 1 / totalJumpTime;
+
+            animator.SetFloat("jumpTime", animationSpeed);
         }
 
         public void Jump()
@@ -41,20 +68,14 @@ namespace Script
             {
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _isJumping = true;
+                animator.SetBool("isJump", true);
             }
         }
 
         private IEnumerator Blink()
         {
             _isInvincible = true;
-            for (int i = 0; i < 3; i++)
-            {
-                _sprite.enabled = false;
-                yield return new WaitForSeconds(0.1f);
-                _sprite.enabled = true;
-                yield return new WaitForSeconds(0.1f);
-            }
-
+            yield return new WaitForSeconds(invincibleTime);
             _isInvincible = false;
         }
 
@@ -63,6 +84,7 @@ namespace Script
         {
             if (collision.gameObject.CompareTag("Ground"))
             {
+                animator.SetBool("isJump", false);
                 _isJumping = false;
             }
         }
@@ -113,11 +135,84 @@ namespace Script
 
             if (life <= 0)
             {
-                Debug.Log("Player is dead");
+                StartCoroutine(Dead());
             }
 
             RemoveLifeFromGrid();
-            // StartCoroutine(Blink());
+            StartCoroutine(Blink());
+        }
+
+        private IEnumerator Dead()
+        {
+            Time.timeScale = 0.1F;
+            yield return new WaitForSeconds(0.25f);
+            Time.timeScale = 1;
+            CheckOneCoin();
+        }
+
+        private void CheckOneCoin()
+        {
+            if (_haveOneMoreCoin)
+            {
+                SetBoostMode();
+            }
+            else
+            {
+                GameOver();
+            }
+        }
+
+        private void SetBoostMode()
+        {
+            _isInvincible = true;
+            animator.SetBool("hasOneCoin", true);
+            boostSpeedMultiplier = speed * 3;
+            _haveOneMoreCoin = false;
+            _isBoostMode = true;
+        }
+
+        private void GameOver()
+        {
+            animator.SetBool("hasOneCoin", false);
+            Time.timeScale = 0;
+            defeatPanel.SetActive(true);
+        }
+
+        private void Update()
+        {
+            if (life > 0) Time.timeScale = 1;
+            if (_isBoostMode)
+            {
+                emergencyPanel.SetActive(true);
+                emergencyPanelText.text = boostTime.ToString("0.0");
+                speed = boostSpeedMultiplier;
+                if (boostTime <= 0)
+                {
+                    _isBoostMode = false;
+                    GameOver();
+                }
+
+                if (life > 0)
+                {
+                    speed = _initialSpeed;
+                    _isBoostMode = false;
+                }
+            }
+            else
+            {
+                emergencyPanel.SetActive(false);
+            }
+
+
+            if (life > 0 && !_haveOneMoreCoin)
+            {
+                _isInvincible = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                DecreaseLife(1);
+            }
         }
 
         private void AddLifeIntoGrid()
@@ -149,8 +244,17 @@ namespace Script
 
             if (collision.transform.parent.gameObject.CompareTag("Score"))
             {
+                Debug.Log("score up");
                 IncreaseScore(1);
-                Destroy(collision.gameObject);
+                if (_isBoostMode) boostTime += boostAddTime;
+                Vector3 destination = collision.transform.position;
+                int b = Random.Range(7, 20);
+                destination.x += 10;
+                Instantiate(soldierEffect, collision.transform.position, Quaternion.identity);
+                collision.transform.DOJump(destination, b, 1, 2f);
+                collision.transform.DOScale(new Vector3(0.001F, 0.001F, 0.001F), 2F)
+                    .OnComplete(() => Destroy(collision));
+                StartCoroutine(MakeStar(destination));
             }
 
             if (collision.transform.parent.gameObject.CompareTag("Life"))
@@ -158,6 +262,16 @@ namespace Script
                 IncreaseLife(1);
                 Destroy(collision.gameObject);
             }
+        }
+
+        public IEnumerator MakeStar(Vector3 pos)
+        {
+            yield return new WaitForSeconds(2f);
+            starSprite.transform.position = pos;
+            starSprite.transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1);
+            var sequence = DOTween.Sequence();
+            sequence.Append(starSprite.transform.DOScale(new Vector3(0.05F, 0.05F, 0.05F), 0.5F));
+            sequence.Append(starSprite.transform.DOScale(new Vector3(0.01F, 0.01F, 0.01F), 0.5F));
         }
     }
 }

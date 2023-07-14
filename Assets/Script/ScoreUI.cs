@@ -13,7 +13,7 @@ namespace Script
         {
             PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
             player.AddObserver(this);
-            text.text = "Score : " + player.score;
+            text.text =  player.score.ToString();
         }
 
         private IEnumerator ScoreChangedValueText(int value)
@@ -28,7 +28,7 @@ namespace Script
         public void OnScoreChange(int score, int value)
         {
             StartCoroutine(ScoreChangedValueText(value));
-            text.text = "Score : " + score;
+            text.text = score.ToString();
         }
 
         public void OnLifeChange(int life, int value)
