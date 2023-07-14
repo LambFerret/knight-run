@@ -53,6 +53,7 @@ public class BossManager : MonoBehaviour
     public GameObject currentBoss;
 
     public GameObject gameoverPanel;
+    public GameObject gameoverPanel2;
 
     public bool isBattleongoing = true; //배틀이 시작되었는가?
     public bool isstop; //배틀이 시작되었는가?
@@ -314,7 +315,7 @@ public class BossManager : MonoBehaviour
             isClicked = true;
             isstop = false;
             isDual = false;
-            if (distance < 0.3f && distance > 0)
+            if (distance < 0.5f && distance > 0)
             {
                 Debug.Log("Fever!" + distance);
                 state = State.Fever;
@@ -330,7 +331,7 @@ public class BossManager : MonoBehaviour
                 Camera.main.DOFieldOfView(60, 0.5f);
                 Camera.main.transform.DOShakePosition(1, 1, 5, 180);
             }
-            else if (distance < 1.3f && distance >= 0.3f)
+            else if (distance < 1.3f && distance >= 0.5f)
             {
                 Debug.Log("Good!" + distance);
                 state = State.Good;
@@ -428,6 +429,7 @@ public class BossManager : MonoBehaviour
             }
 
         }
+        isClicked = false;
     }
 
     IEnumerator DeactivateBoss()
@@ -505,10 +507,9 @@ public class BossManager : MonoBehaviour
             Camera.main.DOFieldOfView(60, 0.5f);
             isBattleongoing = false;
         }
-        else
+        else if(curPlayerCount <= 0)
         {
-            Debug.Log("GAMEOVER!");
-            // game over
+            gameoverPanel2.gameObject.SetActive(true);
         }
     }
 }
