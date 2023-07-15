@@ -26,7 +26,7 @@ namespace Script
 
         private void Start()
         {
-            sfxPlayer.Play("FireFly", 0.8F);
+            // sfxPlayer.Play("FireFly", 0.8F);
             _foreFrontWidth = foreFront[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _foreBackWidth = foreBack[0].transform.GetComponent<SpriteRenderer>().bounds.size.x;
             _groundInstances = new List<GameObject>();
@@ -48,6 +48,7 @@ namespace Script
         {
             Renderer rend = background.GetComponent<Renderer>();
             rend.material.mainTextureOffset += new Vector2(0.1f * Time.deltaTime, 0);
+            Debug.Log(_groundInstances.Count);
             foreach (GameObject ground in _groundInstances)
             {
                 ground.transform.position -= new Vector3(player.speed * Time.deltaTime, 0, 0);
